@@ -43,7 +43,7 @@ public class DialogueSystem : MonoBehaviour
     private void Update()
     {
         //update to skip to the end
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             if(!endFlag)
             {
