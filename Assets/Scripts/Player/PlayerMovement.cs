@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight + 0.2f, ground);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight*0.5f + 0.2f, ground);
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            adjusted_speed = speed * 2;
+            adjusted_speed = speed * 4;
         }
         else
         {
@@ -60,7 +60,9 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.drag = 0;
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - 0.01f, rb.velocity.z);
         }
+
         Debug.Log(grounded);
     }
 
