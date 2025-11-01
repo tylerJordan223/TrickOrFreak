@@ -22,6 +22,7 @@ public class DoorScript : MonoBehaviour
         {
             door_canvas.gameObject.SetActive(false);
             transform.parent.GetComponent<HouseScript>().OpenDoor();
+            knocks = 0;
         }
     }
 

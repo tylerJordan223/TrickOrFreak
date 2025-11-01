@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class HouseScript : MonoBehaviour
 {
+    private bool can_interact;
+
     private Animator anim;
 
     [Header("Coloring")]
@@ -22,10 +24,12 @@ public class HouseScript : MonoBehaviour
     private Material[] _runtimeMaterials;
 
     private GameObject dialogue_system;
+    private GameObject already_visited;
 
     private void Awake()
     {
         dialogue_system = transform.Find("DialogueSystem").gameObject;
+        already_visited = transform.Find("AlreadyVisited").gameObject;
         door_cam = transform.Find("DoorCam").GetComponent<CinemachineVirtualCamera>();
 
         house_r = transform.Find("BaseHouseModel").GetComponent<Renderer>();
@@ -50,6 +54,7 @@ public class HouseScript : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        can_interact = true;
     }
 
     private void ApplyColors()
@@ -75,20 +80,28 @@ public class HouseScript : MonoBehaviour
 
     public void OpenDoor()
     {
-        anim.SetBool("TrickOrTreat", true);
-        dialogue_system.SetActive(true);
+        if(can_interact)
+        {
+            anim.SetBool("TrickOrTreat", true);
+            dialogue_system.SetActive(true);
+        }
+        else
+        {
+            already_visited.SetActive(true);
+        }
     }
 
     public void CloseDoor()
     {
         anim.SetBool("TrickOrTreat", false);
+        can_interact = false;
         ReturnToPlayer();
     }
 
     private void Update()
     {
         //if its enabled
-        if (door_cam.Priority == 1)
+        if (door_cam.Priority == 1 && (!dialogue_system.activeSelf && !already_visited.activeSelf))
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
