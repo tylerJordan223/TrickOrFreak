@@ -113,7 +113,6 @@ GameObject:
   - component: {fileID: -8679921383154817045}
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
-  - component: {fileID: 2998471797116763148}
   m_Layer: 0
   m_Name: BaseHouseModel
   m_TagString: Untagged
@@ -189,22 +188,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2998471797116763148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149155446097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38069c68df5995749934d950cef2c84f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floor_col: {r: 0.4264151, g: 0.18585259, b: 0.18585259, a: 1}
-  struct_col: {r: 0.2981131, g: 0.23435862, b: 0.14343177, a: 1}
-  roof_col: {r: 0.06627981, g: 0.3283019, b: 0.09077667, a: 1}
-  walls_col: {r: 0.11533642, g: 0.3086318, b: 0.3660378, a: 1}
 --- !u!1 &1378401651609648824
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +670,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778d905b1de5c054baf48297ffe0ec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floor_col: {r: 0.5169811, g: 0.13558558, b: 0.13558558, a: 1}
+  struct_col: {r: 0.2679245, g: 0.21635877, b: 0.15114985, a: 1}
+  roof_col: {r: 0.19479524, g: 0.4113207, b: 0.22289567, a: 1}
+  walls_col: {r: 0.14891417, g: 0.31655437, b: 0.335849, a: 1}
+  person_front: {fileID: 2100000, guid: eae017bae0742db4c9f26588ca6a0e35, type: 2}
+  person_back: {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
 --- !u!1 &3907696291000220732
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +805,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.3928285, z: -0, w: 0.91961175}
   m_LocalPosition: {x: 0.762, y: 1.9, z: -0.835}
-  m_LocalScale: {x: 2, y: 4, z: 1}
+  m_LocalScale: {x: 1.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2312384242804560506}

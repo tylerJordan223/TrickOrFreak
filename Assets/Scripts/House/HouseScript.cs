@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,11 +16,18 @@ public class HouseScript : MonoBehaviour
     [SerializeField] Material person_front;
     [SerializeField] Material person_back;
 
+    private CinemachineVirtualCamera door_cam;
+
     private Renderer house_r;
     private Material[] _runtimeMaterials;
 
+    private GameObject dialogue_system;
+
     private void Awake()
     {
+        dialogue_system = transform.Find("DialogueSystem").gameObject;
+        door_cam = transform.Find("DoorCam").GetComponent<CinemachineVirtualCamera>();
+
         house_r = transform.Find("BaseHouseModel").GetComponent<Renderer>();
         if (house_r == null) return;
 
@@ -63,5 +71,42 @@ public class HouseScript : MonoBehaviour
         var person = transform.Find("Person");
         person.GetChild(0).GetComponent<Renderer>().material = person_front;
         person.GetChild(1).GetComponent<Renderer>().material = person_back;
+    }
+
+    public void OpenDoor()
+    {
+        anim.SetBool("TrickOrTreat", true);
+    }
+
+    public void CloseDoor()
+    {
+        anim.SetBool("TrickOrTreat", false);
+    }
+
+    private void Update()
+    {
+        //if its enabled
+        if (door_cam.Priority == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ReturnToPlayer();
+            }
+        }
+    }
+
+    public void SwapToHouseCam()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        door_cam.Priority = 1;
+    }
+
+    public void ReturnToPlayer()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        door_cam.Priority = 0;
+        WorldEffects.EnablePlayer();
     }
 }
