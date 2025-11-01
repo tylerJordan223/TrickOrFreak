@@ -77,8 +77,6 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = 0;
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - 0.01f, rb.velocity.z);
         }
-
-        Debug.Log(grounded);
     }
 
     private void FixedUpdate()
