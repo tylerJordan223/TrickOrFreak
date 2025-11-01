@@ -12,6 +12,8 @@ public class Playercam : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    [SerializeField] GameObject e_alert;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,5 +34,22 @@ public class Playercam : MonoBehaviour
         //rotate camera 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+
+        //raycast in direction
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, 3f, LayerMask.GetMask("Interactable")))
+        {
+            e_alert.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                e_alert.SetActive(false);
+                WorldEffects.DisablePlayer();
+            }
+        }
+        else
+        {
+            e_alert.SetActive(false);
+        }
     }
 }

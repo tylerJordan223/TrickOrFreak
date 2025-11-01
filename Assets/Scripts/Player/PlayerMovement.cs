@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static GameObject player;
+
+    private void Awake()
+    {
+        if(player == null)
+        {
+            player = this.gameObject;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+
     [Header("Movement")]
     public float speed;
     public float ground_drag;
