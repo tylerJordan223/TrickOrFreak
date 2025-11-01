@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class CursorBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [SerializeField] UnityEvent onClick;
-    private bool isMouseOver = false;
 
     public void OnPointerClick(PointerEventData eventData)
     {

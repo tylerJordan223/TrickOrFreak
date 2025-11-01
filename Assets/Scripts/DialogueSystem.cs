@@ -1,4 +1,5 @@
 using EasyTextEffects;
+using EasyTextEffects.Effects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] public string[] dialogue_arr;
     [SerializeField] public float buffer_time;
     [SerializeField] Color text_color;
+    [SerializeField] public TextEffectInstance effect;
     [Range(1,10)] public float talkspeed;
 
     private bool endFlag;
@@ -74,6 +76,7 @@ public class DialogueSystem : MonoBehaviour
     {
         talking = true;
         text_object.text = "                                                                                                             ";
+        text_object.GetComponent<TextEffect>().globalEffects[0].effect = effect;
         text_object.GetComponent<TextEffect>().Refresh();
         text_object.enabled = false;
         yield return new WaitForSeconds(0.5f);
