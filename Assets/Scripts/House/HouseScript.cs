@@ -76,11 +76,13 @@ public class HouseScript : MonoBehaviour
     public void OpenDoor()
     {
         anim.SetBool("TrickOrTreat", true);
+        dialogue_system.SetActive(true);
     }
 
     public void CloseDoor()
     {
         anim.SetBool("TrickOrTreat", false);
+        ReturnToPlayer();
     }
 
     private void Update()

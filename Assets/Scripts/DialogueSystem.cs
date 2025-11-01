@@ -69,6 +69,7 @@ public class DialogueSystem : MonoBehaviour
     private void OnDisable()
     {
         text_object.GetComponent<TextEffect>().StopManualEffects();
+        transform.parent.GetComponent<HouseScript>().CloseDoor();
     }
 
     //actually play the dialogue
