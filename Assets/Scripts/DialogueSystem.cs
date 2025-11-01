@@ -19,16 +19,48 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] public TextMeshProUGUI text_object;
     [SerializeField] public string[] dialogue_arr;
     [SerializeField] public float buffer_time;
+    [SerializeField] Color text_color;
     [Range(1,10)] public float talkspeed;
+
+    private bool endFlag;
+    private bool talking;
+    private int dialogue_index;
 
     //runs every ttime this is enabled
     private void OnEnable()
     {
+        //apply the text color
+        text_object.color = text_color;
 
         if (dialogue_arr.Length > 0)
         {
             //play the first piece of dialogue
-            StartCoroutine(do_dialogue(dialogue_arr[0]));
+            dialogue_index = 0;
+            StartCoroutine(do_dialogue(dialogue_arr[dialogue_index]));
+        }
+    }
+
+    private void Update()
+    {
+        //update to skip to the end
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(!endFlag)
+            {
+                endFlag = true;
+            }
+            if(endFlag && !talking)
+            {
+                dialogue_index++;
+                if (dialogue_index < dialogue_arr.Length)
+                {
+                    StartCoroutine(do_dialogue(dialogue_arr[dialogue_index]));
+                }
+                else
+                {
+                    this.gameObject.SetActive(false);
+                }
+            }
         }
     }
 
@@ -40,19 +72,28 @@ public class DialogueSystem : MonoBehaviour
     //actually play the dialogue
     IEnumerator do_dialogue(string s)
     {
-        text_object.text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+        talking = true;
+        text_object.text = "                                                                                                             ";
         text_object.GetComponent<TextEffect>().Refresh();
         text_object.enabled = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        endFlag = false;
         text_object.enabled = true;
         text_object.GetComponent<TextEffect>().StartManualEffects();
 
-        int sub_idx = 0;
-        for(int i = 0; i <= s.Length; i++)
+        for(int i = 0; i < s.Length; i++)
         {
-            text_object.text = s.Substring(0, i);
+            text_object.text = s.Substring(0, i+1);
+
+            if(endFlag)
+            {
+                i = s.Length;
+                text_object.text = s.Substring(0, i);
+            }
+
             yield return new WaitForSeconds(talkspeed / 50);
         }
-        yield return new WaitForSeconds(1f);
+
+        talking = false;
     }
 }
