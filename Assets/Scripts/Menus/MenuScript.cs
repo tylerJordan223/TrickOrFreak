@@ -5,6 +5,7 @@ using UnityEngine;
 public class MenuScript : MonoBehaviour
 {
     [SerializeField] GameObject mainmenu;
+    [SerializeField] GameObject decisionMenu;
 
      //MainMenu Functions
      public void StartGame()
@@ -16,5 +17,11 @@ public class MenuScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void GoToDecision()
+    {
+        WorldEffects.DisablePlayer();
+        decisionMenu.SetActive(true);
     }
 }
