@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class WorldEffects : MonoBehaviour
@@ -12,6 +13,7 @@ public class WorldEffects : MonoBehaviour
     GameObject[] plots;
     [SerializeField] GameObject[] possible_houses;
     [SerializeField] GameObject[] evil_houses;
+    [SerializeField] public Transform starting_position;
 
     public static List<GameObject> current_houses;
 
@@ -31,6 +33,14 @@ public class WorldEffects : MonoBehaviour
 
     public void PopulatePlots()
     {
+        if (current_houses.Count != 0)
+        {
+            foreach (GameObject go in current_houses)
+            {
+                Destroy(go);
+            }
+        }
+
         List<int> possibilities = new List<int>();
         current_houses = new List<GameObject>();
         for(int i = 0; i < possible_houses.Length; i++)

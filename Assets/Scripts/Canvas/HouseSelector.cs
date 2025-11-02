@@ -38,7 +38,6 @@ public class HouseSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if(!active)
         {
-            Debug.Log("doing");
             my_choice.color = new Color(255f, 0f, 0f, 0.1f);
         }
     }

@@ -42,6 +42,7 @@ public class EndTriggerScript : MonoBehaviour
 
     public void DecisionYES()
     {
+        flag = true;
         DecisionCanvas.SetActive(false);
     }
 }
