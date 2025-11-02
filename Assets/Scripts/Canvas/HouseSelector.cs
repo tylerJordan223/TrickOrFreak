@@ -11,12 +11,19 @@ public class HouseSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private Image my_choice;
     private Animator anim;
     private bool active;
+    private AudioSource explosion;
 
     private void Awake()
     {
+        explosion = GetComponent<AudioSource>();
         active = false;
         anim = GetComponent<Animator>();
         my_choice = GetComponent<Image>();
+        my_choice.color = new Color(255f, 0f, 0f, 0f);
+    }
+
+    private void OnEnable()
+    {
         my_choice.color = new Color(255f, 0f, 0f, 0f);
     }
 
@@ -49,6 +56,7 @@ public class HouseSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         my_choice.color = new Color(255f, 255f, 255f, 1f);
         active = true;
         anim.SetBool("explode", true);
+        explosion.Play();
         yield return new WaitForSeconds(0.3f);
         WorldEffects.DeleteHouse(choiceNumber);
         yield return new WaitForSeconds(1f);

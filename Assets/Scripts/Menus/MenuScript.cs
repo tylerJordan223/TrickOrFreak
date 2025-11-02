@@ -14,10 +14,15 @@ public class MenuScript : MonoBehaviour
     [SerializeField] Sprite endWin;
     [SerializeField] Sprite endLose;
 
+    [SerializeField] AudioClip paperSwoosh;
+    [SerializeField] AudioClip childrenCheering;
+    private AudioSource playSwoosh;
 
     //MainMenu Functions
     public void StartGame()
     {
+        playSwoosh = GetComponent<AudioSource>();
+        playSwoosh.Play();
         mainmenu.gameObject.SetActive(false);
         mainmenuCam.gameObject.SetActive(false);
         PlayerMovement.player.transform.position = WorldEffects.instance.starting_position.position;
@@ -29,6 +34,7 @@ public class MenuScript : MonoBehaviour
         endMenu.SetActive(false);
         WorldEffects.instance.PopulatePlots();
         mainmenuCam.SetActive(true);
+        playSwoosh.Play();
         StartCoroutine(StartTransition());
     }
 
@@ -47,6 +53,7 @@ public class MenuScript : MonoBehaviour
     {
         WorldEffects.DisablePlayer();
         decisionCam.SetActive(true);
+        playSwoosh.Play();
         StartCoroutine(DecisionTransition());
     }
 
@@ -70,8 +77,8 @@ public class MenuScript : MonoBehaviour
         {
             endImage.sprite = endLose;
         }
-
-            StartCoroutine(EndTransition());
+        playSwoosh.Play();
+        StartCoroutine(EndTransition());
     }
 
     IEnumerator EndTransition()
@@ -79,5 +86,11 @@ public class MenuScript : MonoBehaviour
         endMenu.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         endMenu.GetComponent<Animator>().SetBool("Go", true);
+        playSwoosh.PlayOneShot(paperSwoosh);
+        yield return new WaitForSeconds(2.0f);
+        if(endImage.sprite == endWin)
+        {
+            playSwoosh.PlayOneShot(childrenCheering, 0.3f);
+        }
     }
 }

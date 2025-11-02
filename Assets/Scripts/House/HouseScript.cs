@@ -26,8 +26,13 @@ public class HouseScript : MonoBehaviour
     private GameObject dialogue_system;
     private GameObject already_visited;
 
+    [SerializeField] AudioClip openDoor;
+    [SerializeField] AudioClip closeDoor;
+    private AudioSource ads;
+
     private void Awake()
     {
+        ads = GetComponent<AudioSource>();
         dialogue_system = transform.Find("DialogueSystem").gameObject;
         already_visited = transform.Find("AlreadyVisited").gameObject;
         door_cam = transform.Find("DoorCam").GetComponent<CinemachineVirtualCamera>();
@@ -83,6 +88,7 @@ public class HouseScript : MonoBehaviour
         if(can_interact)
         {
             anim.SetBool("TrickOrTreat", true);
+            ads.PlayOneShot(openDoor);
             dialogue_system.SetActive(true);
         }
         else
@@ -93,6 +99,7 @@ public class HouseScript : MonoBehaviour
 
     public void CloseDoor()
     {
+        ads.PlayOneShot(closeDoor);
         anim.SetBool("TrickOrTreat", false);
         can_interact = false;
         ReturnToPlayer();
