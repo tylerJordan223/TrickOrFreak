@@ -24,6 +24,9 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] public TextEffectInstance effect;
     [Range(1,10)] public float talkspeed;
 
+    [SerializeField] AudioClip talk_sound;
+    private AudioSource ads;
+
     private bool endFlag;
     private bool talking;
     private int dialogue_index;
@@ -31,6 +34,8 @@ public class DialogueSystem : MonoBehaviour
     //runs every ttime this is enabled
     private void OnEnable()
     {
+        ads = GetComponent<AudioSource>();
+
         //apply the text color
         text_object.color = text_color;
 
@@ -95,6 +100,10 @@ public class DialogueSystem : MonoBehaviour
                 text_object.text = s.Substring(0, i);
             }
 
+            if(talk_sound != null)
+            {
+                ads.PlayOneShot(talk_sound);
+            }
             yield return new WaitForSeconds(talkspeed / 50);
         }
 
