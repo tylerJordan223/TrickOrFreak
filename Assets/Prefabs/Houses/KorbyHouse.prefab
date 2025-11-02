@@ -1545,7 +1545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
       propertyPath: dialogue_arr.Array.data[2]
-      value: in not the freak if you were wondering
+      value: im not the freak if you were wondering
       objectReference: {fileID: 0}
     - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
       propertyPath: dialogue_arr.Array.data[3]
