@@ -701,8 +701,8 @@ MonoBehaviour:
   struct_col: {r: 0, g: 0, b: 0, a: 1}
   roof_col: {r: 0.16016929, g: 0.019416127, b: 0.381132, a: 1}
   walls_col: {r: 0.5875713, g: 0.32446414, b: 0.86415094, a: 1}
-  person_front: {fileID: 2100000, guid: eae017bae0742db4c9f26588ca6a0e35, type: 2}
-  person_back: {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  person_front: {fileID: 2100000, guid: 68bf31bb229801444b667511792bfa84, type: 2}
+  person_back: {fileID: 2100000, guid: 6f4d55cdc6a59194bbca46f089468cef, type: 2}
   openDoor: {fileID: 8300000, guid: d17d5eee83aca404b835a21e88f4e84b, type: 3}
   closeDoor: {fileID: 8300000, guid: 35fea1be5b77bf7439e7db72c99b3a72, type: 3}
 --- !u!82 &7271446468030033841
