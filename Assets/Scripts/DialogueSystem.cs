@@ -102,7 +102,7 @@ public class DialogueSystem : MonoBehaviour
 
             if(talk_sound != null)
             {
-                ads.PlayOneShot(talk_sound);
+                ads.PlayOneShot(talk_sound, 1f);
             }
             yield return new WaitForSeconds(talkspeed / 50);
         }
