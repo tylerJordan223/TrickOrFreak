@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
         if(player == null)
         {
             player = this.gameObject;
+            player.SetActive(false);
         }
         else
         {
