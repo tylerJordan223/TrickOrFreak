@@ -379,7 +379,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  - {fileID: 2100000, guid: be25a137353ab1946bbeff4aefb54e80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -485,7 +485,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  - {fileID: 2100000, guid: 12cb3edb0e9fb014d9f495e8e5d6eb7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 3685556313957452712}
   - component: {fileID: 7271446468030033841}
   m_Layer: 0
-  m_Name: FHouse1
+  m_Name: WizHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,12 +697,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778d905b1de5c054baf48297ffe0ec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floor_col: {r: 0.5169811, g: 0.13558558, b: 0.13558558, a: 1}
-  struct_col: {r: 0.2679245, g: 0.21635877, b: 0.15114985, a: 1}
-  roof_col: {r: 0.19479524, g: 0.4113207, b: 0.22289567, a: 1}
-  walls_col: {r: 0.14891417, g: 0.31655437, b: 0.335849, a: 1}
-  person_front: {fileID: 2100000, guid: eae017bae0742db4c9f26588ca6a0e35, type: 2}
-  person_back: {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  floor_col: {r: 0.38657257, g: 0.13725491, b: 0.5176471, a: 1}
+  struct_col: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  roof_col: {r: 0.93962264, g: 0.8857088, b: 0.2606123, a: 1}
+  walls_col: {r: 0.16991813, g: 0.26363626, b: 0.8113208, a: 1}
+  person_front: {fileID: 2100000, guid: 12cb3edb0e9fb014d9f495e8e5d6eb7b, type: 2}
+  person_back: {fileID: 2100000, guid: be25a137353ab1946bbeff4aefb54e80, type: 2}
   openDoor: {fileID: 8300000, guid: d17d5eee83aca404b835a21e88f4e84b, type: 3}
   closeDoor: {fileID: 8300000, guid: 35fea1be5b77bf7439e7db72c99b3a72, type: 3}
 --- !u!82 &7271446468030033841
@@ -1512,8 +1512,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac844096101b4cbcabd779d6d223858, type: 2}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: talk_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: c6f64ec3786ae8a44b168772e5b598cf, type: 3}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.b
+      value: 0.78867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.g
+      value: 0.43752185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.r
+      value: 0.38541117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
       propertyPath: dialogue_arr.Array.data[0]
-      value: FREAK
+      value: I...! AM THE GREAT ORBIUS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[1]
+      value: what....?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[2]
+      value: Im just dressing up as my ORB for Halloween!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[3]
+      value: Here, take your candy, have an ORBTASTIC night!
       objectReference: {fileID: 0}
     - target: {fileID: 8752968729048187927, guid: 680b2e8c82250df468ca808411429aae, type: 3}
       propertyPath: m_Name

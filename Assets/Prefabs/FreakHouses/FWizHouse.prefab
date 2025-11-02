@@ -379,7 +379,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  - {fileID: 2100000, guid: be25a137353ab1946bbeff4aefb54e80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -485,7 +485,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  - {fileID: 2100000, guid: 12cb3edb0e9fb014d9f495e8e5d6eb7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 3685556313957452712}
   - component: {fileID: 7271446468030033841}
   m_Layer: 0
-  m_Name: House1
+  m_Name: FWizHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -659,6 +659,7 @@ Transform:
   - {fileID: 7155622460516187498}
   - {fileID: 774841014735851134}
   - {fileID: -8679921383154817045}
+  - {fileID: 4031230027261497429}
   - {fileID: 3597505459987218590}
   - {fileID: 2200549135609562346}
   - {fileID: 4521701488552034160}
@@ -697,12 +698,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778d905b1de5c054baf48297ffe0ec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floor_col: {r: 0.5169811, g: 0.13558558, b: 0.13558558, a: 1}
-  struct_col: {r: 0.2679245, g: 0.21635877, b: 0.15114985, a: 1}
-  roof_col: {r: 0.19479524, g: 0.4113207, b: 0.22289567, a: 1}
-  walls_col: {r: 0.14891417, g: 0.31655437, b: 0.335849, a: 1}
-  person_front: {fileID: 2100000, guid: eae017bae0742db4c9f26588ca6a0e35, type: 2}
-  person_back: {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  floor_col: {r: 0.38657257, g: 0.13725491, b: 0.5176471, a: 1}
+  struct_col: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  roof_col: {r: 0.93962264, g: 0.8857088, b: 0.2606123, a: 1}
+  walls_col: {r: 0.16991813, g: 0.26363626, b: 0.8113208, a: 1}
+  person_front: {fileID: 2100000, guid: 12cb3edb0e9fb014d9f495e8e5d6eb7b, type: 2}
+  person_back: {fileID: 2100000, guid: be25a137353ab1946bbeff4aefb54e80, type: 2}
   openDoor: {fileID: 8300000, guid: d17d5eee83aca404b835a21e88f4e84b, type: 3}
   closeDoor: {fileID: 8300000, guid: 35fea1be5b77bf7439e7db72c99b3a72, type: 3}
 --- !u!82 &7271446468030033841
@@ -1279,6 +1280,112 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2788403564891374638}
+--- !u!1 &7365514033281958404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4031230027261497429}
+  - component: {fileID: 3196818059532549051}
+  - component: {fileID: 5208185214530391166}
+  - component: {fileID: 221820052606309267}
+  m_Layer: 0
+  m_Name: PersonFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4031230027261497429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365514033281958404}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9203848, z: -0, w: -0.39101395}
+  m_LocalPosition: {x: -2.412, y: 1.0411, z: -6.3549}
+  m_LocalScale: {x: 2.4420817, y: 2.19202, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7720111008386970977}
+  m_LocalEulerAnglesHint: {x: 0, y: 226.035, z: 0}
+--- !u!33 &3196818059532549051
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365514033281958404}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5208185214530391166
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365514033281958404}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 59feaf88b28caa34d9d8a610b98939d0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &221820052606309267
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365514033281958404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &9155706927483010708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,9 +1619,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac844096101b4cbcabd779d6d223858, type: 2}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
       propertyPath: talk_sound
       value: 
-      objectReference: {fileID: 8300000, guid: 6ffec8f38ae385245b1b95f2f5995017, type: 3}
+      objectReference: {fileID: 8300000, guid: c6f64ec3786ae8a44b168772e5b598cf, type: 3}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.b
+      value: 0.78867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.g
+      value: 0.43752185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.r
+      value: 0.38541117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[0]
+      value: I...! AM THE GREAT ORBIUS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[1]
+      value: what....?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[2]
+      value: Whats so weird about an orb dressing up as his Master?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[3]
+      value: Here, take your candy, have an ORBTASTIC night!
+      objectReference: {fileID: 0}
     - target: {fileID: 8752968729048187927, guid: 680b2e8c82250df468ca808411429aae, type: 3}
       propertyPath: m_Name
       value: DialogueSystem
