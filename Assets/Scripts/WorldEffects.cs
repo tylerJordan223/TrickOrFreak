@@ -8,6 +8,7 @@ public class WorldEffects : MonoBehaviour
 {
     public static WorldEffects instance;
     public static int freakHouseNum;
+    public int freakChoice;
 
     [SerializeField]
     GameObject[] plots;
@@ -33,6 +34,8 @@ public class WorldEffects : MonoBehaviour
 
     public void PopulatePlots()
     {
+        freakChoice = -1;
+
         if (current_houses.Count != 0)
         {
             foreach (GameObject go in current_houses)
@@ -72,7 +75,7 @@ public class WorldEffects : MonoBehaviour
                 h.transform.SetLocalPositionAndRotation(new Vector3(0, 0.15f, 0), Quaternion.Euler(0, 270, 0));
                 current_houses.Add(h);
                 possibilities.Remove(possibilities[temp]);
-                freakHouseNum = f;
+                freakHouseNum = f+1;
             }
         }
             

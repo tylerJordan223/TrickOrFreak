@@ -22,14 +22,7 @@ public class HouseSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(choiceNumber == WorldEffects.GetFreakNum())
-        {
-            //good ending
-        }
-        else
-        {
-            //bad ending
-        }
+        WorldEffects.instance.freakChoice = choiceNumber;
 
         StartCoroutine(Transition());
     }

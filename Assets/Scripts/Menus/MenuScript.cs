@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class MenuScript : MonoBehaviour
     [SerializeField] GameObject decisionMenu;
     [SerializeField] GameObject decisionCam;
     [SerializeField] GameObject endMenu;
+    [SerializeField] Image endImage;
+    [SerializeField] Sprite endWin;
+    [SerializeField] Sprite endLose;
+
 
     //MainMenu Functions
     public void StartGame()
@@ -56,7 +61,17 @@ public class MenuScript : MonoBehaviour
     {
         decisionMenu.SetActive(false);
         decisionCam.SetActive(false);
-        StartCoroutine(EndTransition());
+
+        if(WorldEffects.freakHouseNum == WorldEffects.instance.freakChoice)
+        {
+            endImage.sprite = endWin;
+        }
+        else
+        {
+            endImage.sprite = endLose;
+        }
+
+            StartCoroutine(EndTransition());
     }
 
     IEnumerator EndTransition()
