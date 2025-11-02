@@ -16,7 +16,6 @@ public class DoorScript : MonoBehaviour
         knocks = 0;
     }
 
-
     public void Knock()
     {
         knocks++;
@@ -25,12 +24,15 @@ public class DoorScript : MonoBehaviour
         {
             door_canvas.gameObject.SetActive(false);
             transform.parent.GetComponent<HouseScript>().OpenDoor();
+            WorldEffects.instance.HandvasOff();
             knocks = 0;
         }
     }
 
     public void ActivateDoor()
     {
+        Cursor.visible = false;
         door_canvas.gameObject.SetActive(true);
+        WorldEffects.instance.HandvasOn();
     }
 }

@@ -15,6 +15,7 @@ public class WorldEffects : MonoBehaviour
     [SerializeField] GameObject[] possible_houses;
     [SerializeField] GameObject[] evil_houses;
     [SerializeField] public Transform starting_position;
+    [SerializeField] public GameObject handvas;
 
     public static List<GameObject> current_houses;
 
@@ -25,6 +26,7 @@ public class WorldEffects : MonoBehaviour
             current_houses = new List<GameObject>();
             instance = this;
             PopulatePlots();
+            DisablePlayer();
         }
         else
         {
@@ -97,5 +99,15 @@ public class WorldEffects : MonoBehaviour
     public static void DeleteHouse(int i)
     {
         Destroy(current_houses[i-1]);
+    }
+
+    public void HandvasOn()
+    {
+        handvas.SetActive(true);
+    }
+
+    public void HandvasOff()
+    {
+        handvas.SetActive(false);
     }
 }

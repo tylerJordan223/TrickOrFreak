@@ -14,18 +14,17 @@ public class Playercam : MonoBehaviour
 
     [SerializeField] GameObject e_alert;
 
-
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
     //also do this whenever its enabled
     private void OnEnable()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    private void OnDisable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void Update()
