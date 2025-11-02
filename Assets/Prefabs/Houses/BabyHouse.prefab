@@ -379,7 +379,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  - {fileID: 2100000, guid: 1417ef3f256da5449bdee07d44b22bef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -485,7 +485,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  - {fileID: 2100000, guid: 846a994e288102d49abbb2e552892674, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 3685556313957452712}
   - component: {fileID: 7271446468030033841}
   m_Layer: 0
-  m_Name: FHouse5
+  m_Name: BabyHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,12 +697,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778d905b1de5c054baf48297ffe0ec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floor_col: {r: 0.5169811, g: 0.13558558, b: 0.13558558, a: 1}
+  floor_col: {r: 0.3733499, g: 0.85660374, b: 0.76110154, a: 1}
   struct_col: {r: 0.2679245, g: 0.21635877, b: 0.15114985, a: 1}
-  roof_col: {r: 0.19479524, g: 0.4113207, b: 0.22289567, a: 1}
-  walls_col: {r: 0.14891417, g: 0.31655437, b: 0.335849, a: 1}
-  person_front: {fileID: 2100000, guid: eae017bae0742db4c9f26588ca6a0e35, type: 2}
-  person_back: {fileID: 2100000, guid: 5d1e137611948f74fa408f1a92add4ad, type: 2}
+  roof_col: {r: 0.4113207, g: 0.37123567, b: 0.23204695, a: 1}
+  walls_col: {r: 0.8867924, g: 0.88594663, b: 0.6676041, a: 1}
+  person_front: {fileID: 2100000, guid: 846a994e288102d49abbb2e552892674, type: 2}
+  person_back: {fileID: 2100000, guid: 1417ef3f256da5449bdee07d44b22bef, type: 2}
   openDoor: {fileID: 8300000, guid: d17d5eee83aca404b835a21e88f4e84b, type: 3}
   closeDoor: {fileID: 8300000, guid: 35fea1be5b77bf7439e7db72c99b3a72, type: 3}
 --- !u!82 &7271446468030033841
@@ -1512,8 +1512,48 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: ea578c2b1d1db41e18bdf65378511f7a, type: 2}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: talkspeed
+      value: 2.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: talk_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 316b7842b600f9146a399189a8877f04, type: 3}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.b
+      value: 0.82641506
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.g
+      value: 0.81960565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: text_color.r
+      value: 0.33524382
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
       propertyPath: dialogue_arr.Array.data[0]
-      value: FREAK
+      value: 'Gaga googoo '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[1]
+      value: gagoo goo ga
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[2]
+      value: Pretty convincing baby costume huh?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830265407352138626, guid: 680b2e8c82250df468ca808411429aae, type: 3}
+      propertyPath: dialogue_arr.Array.data[3]
+      value: heres your candy, kid
       objectReference: {fileID: 0}
     - target: {fileID: 8752968729048187927, guid: 680b2e8c82250df468ca808411429aae, type: 3}
       propertyPath: m_Name
